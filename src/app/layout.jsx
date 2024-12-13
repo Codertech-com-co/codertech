@@ -1,6 +1,6 @@
 "use client";
 import localFont from "next/font/local";
-import React from "react";
+import React,{useEffect} from "react";
 import "./globals.css";
 import {
   Navbar,
@@ -28,8 +28,35 @@ const metadata = {
   description: "Desarrollo de software",
 };
 
+
+
 export default function RootLayout({ children }) {
   const [openNav, setOpenNav] = React.useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Función para actualizar el tema automáticamente
+      const updateTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+        document.body.classList.toggle('dark', isDark);
+      };
+
+      // Ejecutar la actualización inicial del tema
+      updateTheme();
+
+      // Escuchar cambios en el modo de color del sistema
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      mediaQuery.addEventListener('change', updateTheme);
+
+      // Limpiar el listener al desmontar el componente
+      return () => {
+        mediaQuery.removeEventListener('change', updateTheme);
+      };
+    }
+  }, []);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -43,40 +70,40 @@ export default function RootLayout({ children }) {
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-bold text-white"
+        className="flex items-center gap-x-2 p-1 font-bold text-black dark:text-white"
       >
         <Link href="/" className="flex items-center">
-          Inicio
+          INICIO
         </Link>
       </Typography>
-      <Typography
+      {/* <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-bold text-white"
+        className="flex items-center gap-x-2 p-1 font-bold text-black dark:text-white"
       >
         <Link href="/about" className="flex items-center">
-          Sobre mi
+          SOBRE MI
         </Link>
       </Typography>
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-bold text-white"
+        className="flex items-center gap-x-2 p-1 font-bold text-black dark:text-white"
       >
         <Link href="/projects" className="flex items-center">
-          Proyectos
+          PROYECTOS
         </Link>
-      </Typography>
+      </Typography> */}
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-bold text-white"
+        className="flex items-center gap-x-2 p-1 font-bold text-black dark:text-white"
       >
         <Link href="/contact" className="flex items-center">
-          Contacto
+          CONTACTO
         </Link>
       </Typography>
     </ul>
@@ -92,16 +119,17 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 
       >
-        <div className="min-h-screen bg-gradient-to-br from-[60%] from-black to-blue-900 fixed inset-0 -z-10"></div>
+        <div className="min-h-screen bg-gradient-to-br from-[10%] from-gray-100 to-white dark:bg-gradient-to-br dark:from-[60%] dark:from-black dark:to-blue-900 fixed inset-0 -z-10"></div>
         <div className="relative">
-          <Navbar className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4 bg-transparent border-none ">
+          <Navbar className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4 bg-transparent border-none shadow-none  ">
             <div className="container mx-auto flex items-center justify-between text-blue-gray-900 bg">
               <Typography
                 as="a"
                 href="#"
                 className="mr-4 cursor-pointer py-1.5 font-bold text-white"
               >
-                <img src="./logo2.png" width={'200px'} />
+                {/* <img src="./logo2.png" width={'200px'} /> */}
+                <div className="bg-[url('/logo.png')] dark:bg-[url('/logo2.png')] w-[200px] h-[50px] bg-contain bg-no-repeat" alt="" width={'200px'} />
               </Typography>
               <div className="hidden lg:block">{navList}</div>
               <div className="flex items-center gap-x-1">
@@ -111,7 +139,7 @@ export default function RootLayout({ children }) {
                 <Button
                   variant="gradient"
                   size="sm"
-                  className="hidden lg:inline-block"
+                  className="hidden lg:inline-block shadow-none"
                   color="white"
                 >
                   <span>Redes Sociales</span>
@@ -166,8 +194,8 @@ export default function RootLayout({ children }) {
                     fullWidth
                     variant="gradient"
                     size="sm"
-                    className=""
-                    color="white"
+                    className="text-cyan-400 dark:text-white"
+                    
                   >
                     <span>Redes Sociales</span>
                   </Button>
@@ -177,6 +205,7 @@ export default function RootLayout({ children }) {
           </Navbar>
           {children}
         </div>
+        <button className=" fixed bottom-5 right-5 bg-white rounded-[50%] w-[60px] h-[60px] bg-[url('https://static.vecteezy.com/system/resources/previews/018/930/564/non_2x/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png')] bg-contain bg-no-repeat"></button>
       </body>
     </html>
   );
