@@ -77,7 +77,7 @@ export default function Home() {
       {/* PRESENTACION */}
       <div className="w-full h-screen flex flex-col justify-center items-center text-center relative">
         {/* Partículas en el fondo */}
-        <div className="absolute inset-0 z-0">
+        <div className="fixed mt-0 inset-0 z-0">
           <Particles
             particleColors={['#ffffff', '#ffffff']}
             particleCount={200}
