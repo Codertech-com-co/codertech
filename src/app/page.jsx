@@ -73,11 +73,8 @@ export default function Home() {
   ];
 
   return (
-    <div>
-      {/* PRESENTACION */}
-      <div className="w-full h-screen flex flex-col justify-center items-center text-center relative">
-        {/* Partículas en el fondo */}
-        <div className="fixed mt-0 inset-0 z-0">
+    <div className="relative">
+       <div className=" fixed mt-0 ">
           <Particles
             particleColors={['#ffffff', '#ffffff']}
             particleCount={200}
@@ -89,13 +86,17 @@ export default function Home() {
             disableRotation={false}
           />
         </div>
+      {/* PRESENTACION */}
+      <div className="w-full h-screen flex flex-col justify-center items-center text-center ">
+        {/* Partículas en el fondo */}
+       
         {/* Contenido encima de las partículas */}
         <div className="z-10 -mt-32">
           <Typography variant="h1" className="text-white text-[40px] md:text-[80px]">
             Duvan<span className="text-black bg-cyan-500 rounded-md px-5 py-2 ml-2">Ayala</span>
           </Typography>
           <br />
-          <TypeWriter data={typeWriter} className="text-[20px] text-white" />
+          <TypeWriter data={typeWriter} className=" text-white font-semibold text-[30px]" />
           <br />
           <br />
           <a href="#proyecto" color="cyan" className="mt-10 text-[20px] md:text-[40px] bg-cyan-500 p-2 rounded-xl text-white font-semibold">
@@ -105,7 +106,7 @@ export default function Home() {
       </div>
 
       {/* EMPRESAS CON LAS QUE EH TRABAJADO */}
-      <div className="overflow-hidden w-full mt-16 place-items-center place-content-center">
+      <div className="overflow-hidden w-full mt-16 place-items-center place-content-center z-50">
         <span className="dark:text-white font-bold tracking-[10px] text-center">
           ALGUNAS EMPRESAS CON LAS QUE TRABAJE
         </span>
@@ -144,7 +145,7 @@ export default function Home() {
       </div>
 
        {/* INICIAR TU PROYECTO */}
-       <div className="w-full place-items-center mt-16" id="proyecto">
+       <div className="relative w-full place-items-center mt-16 " id="proyecto">
         <div className="p-5 rounded-xl text-center w-[70%] mx-auto">
           <Typography variant="h2" className="text-[40px] dark:text-white">
             💡 ¿Tienes un proyecto en mente? 🚀
@@ -158,7 +159,7 @@ export default function Home() {
           <a
             href="https://api.whatsapp.com/send?phone=573249899089&text=%F0%9F%92%A1%20Hola%2C%20tengo%20en%20mente%20un%20proyecto%20para%20desarrollar.%20%C2%BFPodemos%20hacerlo%20posible%3F%20%F0%9F%9A%80"
             target="_blank"
-            className="px-4 py-2 text-white rounded-full float-right bg-cyan-400 font-bold"
+            className="px-4 py-2 text-white rounded-full float-right bg-cyan-400 font-bold z-50"
           >
             👉 Hablemos
           </a>
@@ -166,7 +167,7 @@ export default function Home() {
       </div>
 
       {/* HABILIDADES */}
-      <div className="w-full mt-16 place-items-center">
+      <div className="relative w-full mt-16 place-items-center">
         <Typography variant="h2" className="text-center dark:text-white mb-8">
           Mis Habilidades
         </Typography>
