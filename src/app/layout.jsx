@@ -14,7 +14,7 @@ import Link from "next/link";
 import SplashCursor from "./components/SplashCursor";
 import Particles from "./components/Particles";
 import CursorEffect from "./components/CursorEffect";
-import AnimatedCursor from "react-animated-cursor"
+// import AnimatedCursor from "react-animated-cursor"
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -124,7 +124,7 @@ export default function RootLayout({ children }) {
       >
         <div className="min-h-screen bg-black    fixed inset-0 -z-10"></div>
         {/* <SplashCursor /> */}
-        <AnimatedCursor
+        {/* <AnimatedCursor
           innerSize={8}
           outerSize={35}
           innerScale={1}
@@ -138,7 +138,7 @@ export default function RootLayout({ children }) {
           outerStyle={{
             border: '3px solid #ffffff'
           }}
-        />
+        /> */}
 
 
         <div className="relative">
