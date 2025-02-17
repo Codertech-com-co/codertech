@@ -1,6 +1,6 @@
 "use client";
 import localFont from "next/font/local";
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import "./globals.css";
 import {
   Navbar,
@@ -11,7 +11,10 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import Link from "next/link";
-
+import SplashCursor from "./components/SplashCursor";
+import Particles from "./components/Particles";
+import CursorEffect from "./components/CursorEffect";
+import AnimatedCursor from "react-animated-cursor"
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -41,7 +44,7 @@ export default function RootLayout({ children }) {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
 
-        document.body.classList.toggle('dark', isDark);
+        // document.body.classList.toggle('dark', isDark);
       };
 
       // Ejecutar la actualización inicial del tema
@@ -102,7 +105,7 @@ export default function RootLayout({ children }) {
         color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-bold text-black dark:text-white"
       >
-        <Link href="/contact" className="flex items-center">
+        <Link href="#contacto" className="flex items-center">
           CONTACTO
         </Link>
       </Typography>
@@ -116,13 +119,31 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
 
       >
-        <div className="min-h-screen bg-gradient-to-br from-[10%] from-gray-100 to-white dark:bg-gradient-to-br dark:from-[60%] dark:from-black dark:to-blue-900 fixed inset-0 -z-10"></div>
+        <div className="min-h-screen bg-black    fixed inset-0 -z-10"></div>
+        {/* <SplashCursor /> */}
+        <AnimatedCursor
+          innerSize={8}
+          outerSize={35}
+          innerScale={1}
+          outerScale={2}
+          outerAlpha={0}
+          hasBlendMode={true}
+          color="#ffffff"
+          innerStyle={{
+            backgroundColor: '#ffffff'
+          }}
+          outerStyle={{
+            border: '3px solid #ffffff'
+          }}
+        />
+
+
         <div className="relative">
-          <Navbar className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4 bg-transparent border-none shadow-none  ">
-            <div className="container mx-auto flex items-center justify-between text-blue-gray-900 bg">
+          <Navbar className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4 bg-transparent  border-none shadow-none  ">
+            <div className="container mx-auto flex items-center justify-between text-blue-gray-900 bg-transparent">
               <Typography
                 as="a"
                 href="#"
@@ -133,17 +154,7 @@ export default function RootLayout({ children }) {
               </Typography>
               <div className="hidden lg:block">{navList}</div>
               <div className="flex items-center gap-x-1">
-                {/* <Button variant="text" size="sm" className="hidden lg:inline-block text-white">
-            <span>Log In</span>
-          </Button> */}
-                <Button
-                  variant="gradient"
-                  size="sm"
-                  className="hidden lg:inline-block shadow-none"
-                  color="white"
-                >
-                  <span>Redes Sociales</span>
-                </Button>
+           
               </div>
               <IconButton
                 variant="text"
@@ -195,7 +206,7 @@ export default function RootLayout({ children }) {
                     variant="gradient"
                     size="sm"
                     className="text-cyan-400 dark:text-white"
-                    
+
                   >
                     <span>Redes Sociales</span>
                   </Button>
@@ -205,7 +216,7 @@ export default function RootLayout({ children }) {
           </Navbar>
           {children}
         </div>
-        <button className=" fixed bottom-5 right-5 bg-white rounded-[50%] w-[60px] h-[60px] bg-[url('https://static.vecteezy.com/system/resources/previews/018/930/564/non_2x/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png')] bg-contain bg-no-repeat"></button>
+        <a href="https://api.whatsapp.com/send?phone=573249899089&text=%F0%9F%92%A1%20Hola%2C%20tengo%20en%20mente%20un%20proyecto%20para%20desarrollar.%20%C2%BFPodemos%20hacerlo%20posible%3F%20%F0%9F%9A%80" target="_blank" className=" fixed bottom-5 right-5 bg-white rounded-[50%] w-[60px] h-[60px] bg-[url('https://static.vecteezy.com/system/resources/previews/018/930/564/non_2x/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png')] bg-contain bg-no-repeat"></a>
       </body>
     </html>
   );
