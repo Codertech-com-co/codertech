@@ -74,7 +74,7 @@ export default function Home() {
 
   return (
     <div className="relative">
-       <div className=" fixed mt-0 ">
+       <div className="fixed mt-0 w-full h-screen">
           <Particles
             particleColors={['#ffffff', '#ffffff']}
             particleCount={200}
