@@ -22,7 +22,7 @@ export default function Home() {
     { name: 'Marquetingentsas', img: 'https://visionveterinaria.com.co/logomarquetingnet.png' },
     { name: 'gmfoto', img: 'https://crmgmfoto.codertech.com.co/_next/image?url=%2Fimages%2Flogo.png&w=128&q=75' },
     { name: 'vetechip', img: 'https://www.visionveterinaria.com.co/base_de_conocimiento/compra_online/images/logo_vetechip.png' },
-    { name: 'Loncheros', img: 'https://raw.githubusercontent.com/Codertech-com-co/loncherosvilleta/refs/heads/main/public/logo.png?token=GHSAT0AAAAAAC65NQVOAPGSS3IWRM4NALIYZ5U6V7Q' },
+    { name: 'Loncheros', img: '/loncheros.png' },
 
   ];
 
