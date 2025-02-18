@@ -38,12 +38,12 @@ export default function Home() {
     <div className="">
       {/* Left background decorative pattern */}
       <div className="absolute left-0 top-20  h-full  hidden md:block opacity-60">
-        <img src="http://iteck_vuenuxt.themescamp.com/assets/img/header/head_shape_l.png" width={400} alt="" />
+        <img src="/head_shape_l.png" width={400} alt="" />
       </div>
 
       {/* Right background decorative pattern */}
       <div className="absolute right-0 top-20  h-full hidden md:block opacity-60">
-        <img src="http://iteck_vuenuxt.themescamp.com/assets/img/header/head_shape_r.png" alt="" width={900} />
+        <img src="/head_shape_r.png" alt="" width={900} />
       </div>
 
       {/* Main content */}
@@ -83,7 +83,7 @@ export default function Home() {
             <div className="relative w-72 h-72 lg:w-[500px] lg:h-[500px] mx-auto">
               <div className="absolute inset-0 bg-transparent  overflow-hidden">
                 <img
-                  src="http://iteck_vuenuxt.themescamp.com/assets/img/header/head.png"
+                  src="/head.png"
                   alt="IT professionals working together"
                   className="w-full h-full "
                 />
@@ -173,7 +173,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <div className="relative w-full h-96 flex flex-wrap justify-center col-span-2 order-1 sm:order-0 md:col-span-1 !-z-50">
-          <motion.img src="http://iteck_vuenuxt.themescamp.com/assets/img/choose_us/choose_lines.svg" alt=""
+          <motion.img src="./choose_lines.svg" alt=""
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
             transition={{ duration: 50, delay: 1 * 0.2, repeat: Infinity, repeatType: "mirror", ease: "linear" }}
@@ -185,7 +185,7 @@ export default function Home() {
             animate={{ y: 40 / 2, scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 1 * 0.2, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
           >
-            <img src="http://iteck_vuenuxt.themescamp.com/assets/img/choose_us/choose_brands.png" alt="" className="sm:h-[600px]" />
+            <img src="./choose_brands.png" alt="" className="sm:h-[600px]" />
           </motion.div>
 
         </div>
