@@ -55,7 +55,7 @@ export default function Home() {
         >
           {/* Left content */}
           <div className="lg:w-1/2 text-center sm:text-left order-1 sm:order-0">
-            <div className="text-sm text-blue-600 font-medium mb-2">DESARROLLO DE SOFTWARE</div>
+            <div className="text-xl text-blue-600 font-medium mb-2">DESARROLLO DE SOFTWARE</div>
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Soluciones
             </h1>
