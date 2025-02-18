@@ -132,7 +132,7 @@ export default function Home() {
             {/* Left column - Quote */}
             <div>
               <blockquote className="text-3xl lg:text-4xl font-bold mb-4">
-                "El software transforma el mundo cuando conecta con las necesidades reales"
+                &quot;El software transforma el mundo cuando conecta con las necesidades reales&quot;
               </blockquote>
               <cite className="text-white/80">MARÍA TORRES</cite>
             </div>
